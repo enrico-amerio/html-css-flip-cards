@@ -1,0 +1,80 @@
+body{
+  margin:100px;
+}
+.flip-box {
+  background-color: transparent;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+   perspective: 1000px; /*Senso di profondità */
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; /*fondamentale fa attivare il retro*/
+}
+
+.flip-box.horizontal:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /*Safari*/
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* VERTICAL */
+
+.flip-box.vertical:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-back.vertical {
+  transform: rotateX(180deg);
+}
+/* DIAGONAL */
+.flip-box.diagonal:hover .flip-box-inner {
+  transform:rotate3d(-1, -1, 0, 180deg);
+}
+.flip-box-back.diagonal {
+  transform:  rotateY(180deg) rotateZ(90deg);
+}
+
+/* INVERTED HORIZONTAL */
+.flip-box.horizontal.inverted:hover .flip-box-inner {
+  transform: rotateY(-180deg);
+}
+
+/* INVERTED VERTICAL */
+.flip-box.vertical.inverted:hover .flip-box-inner {
+  transform: rotateX(-180deg);
+}
+.flip-box-back.vertical.inverted {
+  transform: rotateX(-180deg);
+}
+
+/* DIAGONAL INVERTED */
+.flip-box.diagonal.inverted:hover .flip-box-inner {
+  transform:rotate3d(1, 1, 0, 180deg);
+}
+.flip-box-back.diagonal.inverted {
+  transform:  rotateY(180deg) rotateZ(90deg);
+}
