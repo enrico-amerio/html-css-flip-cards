@@ -50,9 +50,10 @@ body{
 .flip-box-back.vertical {
   transform: rotateX(180deg);
 }
+
 /* DIAGONAL */
 .flip-box.diagonal:hover .flip-box-inner {
-  transform:rotate3d(-1, -1, 0, 180deg);
+  transform:rotate3d(-1, -1, 0, 180deg); /*rotate3d(x, y, z, a) */
 }
 .flip-box-back.diagonal {
   transform:  rotateY(180deg) rotateZ(90deg);
@@ -73,7 +74,7 @@ body{
 
 /* DIAGONAL INVERTED */
 .flip-box.diagonal.inverted:hover .flip-box-inner {
-  transform:rotate3d(1, 1, 0, 180deg);
+  transform:rotate3d(1, 1, 0, 180deg); /*rotate3d(x, y, z, a) */
 }
 .flip-box-back.diagonal.inverted {
   transform:  rotateY(180deg) rotateZ(90deg);
